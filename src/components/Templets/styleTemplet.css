@@ -1,0 +1,32 @@
+.font-Medium{
+    font-size: 10px;
+    font-weight: 300!important;
+    line-height: 10px;
+}
+.font-Large{
+    font-size: large;
+    font-weight: 400!important;
+}
+.font-X-large{
+    font-size: x-large;
+    font-weight: 400!important;
+}
+
+.wraaper-templet ol li{
+    /* list-style-type: disc!important; */
+    list-style: disc !important;
+    padding: 2px;
+}
+/* .container-templet{
+    padding: 0 20px;
+} */
+.body-templet{
+    padding: 20px;
+}
+.header-templet{
+    padding: 30px;
+    /* height: 100vh; */
+}
+.achievemeents > div{
+    margin: 20px 0;
+}

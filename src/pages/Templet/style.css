@@ -1,0 +1,53 @@
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    color: #2c3e50;
+}
+.header {
+    text-align: center;
+}
+.header img {
+    border-radius: 50%;
+}
+.contact-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contact-info p {
+    margin: 5px 0;
+}
+.section-title {
+    background: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.experience, .education, .achievements, .training, .strengths {
+    margin-bottom: 20px;
+}
+.job {
+    margin-bottom: 10px;
+}
+.job-title {
+    font-weight: bold;
+}
+.job-details {
+    margin-left: 20px;
+}
+ul {
+    padding-left: 20px;
+}
+.achievements ul, .training ul, .strengths ul {
+    list-style-type: none;
+    padding: 0;
+}
+.achievements ul li::before, .training ul li::before, .strengths ul li::before {
+    content: "✔";
+    color: #2c3e50;
+    margin-right: 10px;
+}
