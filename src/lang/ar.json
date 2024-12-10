@@ -301,7 +301,9 @@
     "yourMessage":" رسالتك ",
     "entername":"ادخل الاسم",
     "createanaccount":"إنشاء حساب",
-    "maximumnumberofcustom":"تم الوصول إلى الحد الأقصى لعدد الأقسام المخصصة"
+    "maximumnumberofcustom":"تم الوصول إلى الحد الأقصى لعدد الأقسام المخصصة",
+    "lineheight":"طول الخط",
+    "fontsize":"حجم الخط"
 
 
 

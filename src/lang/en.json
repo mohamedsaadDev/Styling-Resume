@@ -301,6 +301,8 @@
     "yourMessage":"Your Message",
     "entername":"entername",
     "createanaccount":"Create an account",
-    "maximumnumberofcustom":"Maximum number of custom sections reached"
+    "maximumnumberofcustom":"Maximum number of custom sections reached",
+    "lineheight":"Line height",
+    "fontsize":"Font size"
     
 }

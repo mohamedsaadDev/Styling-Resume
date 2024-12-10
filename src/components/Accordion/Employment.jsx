@@ -4,8 +4,18 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { t } from "i18next";
 import { Context } from "../../context/Context";
 const Employment = () => {
-  const {employment, setEmployment} = useContext(Context);
-
+  const {fullData , setFullData} = useContext(Context);
+  const employment = fullData.find((item) => item.id === 'employment');
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFullData((prevData) =>
+      prevData.map((item) =>
+        item.id === 'employment'
+          ? { ...item, [name]: value }
+          : item
+      )
+    );
+  };
   const years = [];
   for (let year = 1960; year <= 2020; year++) {
     years.push(year);
@@ -20,7 +30,11 @@ const Employment = () => {
           className="w-100 d-flex justify-content-between align-items-center"
           type="button"
         >
-          <input className="border-0 " type="text" onChange={(e)=>{setEmployment({...employment,title:e.target.value})}} value={employment.title}/>
+          <input className="border-0 " type="text" 
+          // onChange={(e)=>{setEmployment({...employment,title:e.target.value})}} 
+          onChange={handleInputChange}
+          name="title" 
+          value={employment.title}/>
           {/* <span>{t("employment")}</span> */}
           <div className="d-flex align-items-center">
             <Dropdown onClick={(e) => e.stopPropagation()}>
@@ -101,11 +115,13 @@ const Employment = () => {
               {t("position")}
             </label>
             <input
-              onChange={(e)=>{
-                setEmployment(
-                  {...employment,position : e.target.value }
-                );
-              }} 
+              // onChange={(e)=>{
+              //   setEmployment(
+              //     {...employment,position : e.target.value }
+              //   );
+              // }} 
+              onChange={handleInputChange}
+              name="position"
               value={employment.position}
               className="input-form-choose w-100"
               type="text"
@@ -118,11 +134,13 @@ const Employment = () => {
                 {t("employer")}
               </label>
               <input
-                onChange={(e)=>{
-                  setEmployment(
-                    {...employment,employer : e.target.value }
-                  );
-                }} 
+                // onChange={(e)=>{
+                //   setEmployment(
+                //     {...employment,employer : e.target.value }
+                //   );
+                // }} 
+                onChange={handleInputChange}
+                name="employer"
                 value={employment.employer}
                 className="input-form-choose w-95"
                 type="text"
@@ -134,11 +152,13 @@ const Employment = () => {
                 {t("city")}
               </label>
               <input 
-                onChange={(e)=>{
-                  setEmployment(
-                    {...employment,city : e.target.value }
-                  );
-                }} 
+                // onChange={(e)=>{
+                //   setEmployment(
+                //     {...employment,city : e.target.value }
+                //   );
+                // }} 
+                onChange={handleInputChange}
+                name="city"
                 value={employment.city}
                 className="input-form-choose w-95"
                 type="text" 
@@ -149,12 +169,14 @@ const Employment = () => {
             <div className="my-2 w-50">
               <p>{t("startdate")}</p>
               <select
-              onChange={(e)=>{
-                setEmployment(
-                  {...employment, startDateMonth: e.target.value }
-                );
-              }}
-              className="select-form-choose mr-2" name="" id="">
+              // onChange={(e)=>{
+              //   setEmployment(
+              //     {...employment, startDateMonth: e.target.value }
+              //   );
+              // }}
+              onChange={handleInputChange}
+              name="startDateMonth"
+              className="select-form-choose mr-2"  id="">
                 <option selected>{t("Month")}</option>
                 <option value="1">{t("January")}</option>
                 <option value="2">{t("February")}</option>
@@ -169,14 +191,19 @@ const Employment = () => {
                 <option value="11">{t("November")}</option>
                 <option value="12">{t("December")}</option>
               </select>
-              <select onChange={(e)=>{
-                setEmployment(
-                  {...employment, startDateYear: e.target.value }
-                );
-              }} className="select-form-choose selectYear" name="">
-                <option value="year">{t("year")}</option>
+              <select 
+              // onChange={(e) => {
+              //   setEmployment({
+              //     ...employment,
+              //     startDateYear: e.target.value
+              //   });
+              // }}
+              onChange={handleInputChange}
+              name="startDateYear"
+              className="select-form-choose selectYear" >
+                <option value="">{t("year")}</option>
                 {years.map((year) => (
-                  <option key={year} value="year">
+                  <option key={year} value={year}>
                     {year}
                   </option>
                 ))}
@@ -185,12 +212,14 @@ const Employment = () => {
             <div className="my-2">
               <p>{t("enddate")}</p>
               <select
-                onChange={(e)=>{
-                  setEmployment(
-                    {...employment, endDateMonth: e.target.value }
-                  );
-                }}
-                className="select-form-choose mr-2" name="" id="">
+                // onChange={(e)=>{
+                //   setEmployment(
+                //     {...employment, endDateMonth: e.target.value }
+                //   );
+                // }}
+                onChange={handleInputChange}
+                name="endDateMonth"
+                className="select-form-choose mr-2" id="">
                 <option selected>{t("Month")}</option>
                 <option value="1">{t("January")}</option>
                 <option value="2">{t("February")}</option>
@@ -205,14 +234,18 @@ const Employment = () => {
                 <option value="11">{t("November")}</option>
                 <option value="12">{t("December")}</option>
               </select>
-              <select onChange={(e)=>{
-                setEmployment(
-                  {...employment, endDateYear: e.target.value }
-                );
-              }} className="select-form-choose selectYear" name="">
-                <option value="year">{t("year")}</option>
+              <select 
+              // onChange={(e)=>{
+              //   setEmployment(
+              //     {...employment, endDateYear: e.target.value }
+              //   );
+              // }} 
+              onChange={handleInputChange}
+              name="endDateYear"
+              className="select-form-choose selectYear" >
+                <option >{t("year")}</option>
                 {years.map((year) => (
-                  <option key={year} value="year">
+                  <option key={year} value={year}>
                     {year}
                   </option>
                 ))}

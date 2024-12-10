@@ -5,21 +5,50 @@ import { t } from "i18next";
 import Form from "react-bootstrap/Form";
 import { Context } from "../../context/Context";
 const Languages = () => {
-  const { languages, setLanguages } = useContext(Context);
+  const {  setLanguages,fullData,setFullData } = useContext(Context);
+  const languages = fullData.find((item) => item.id === 'languages');
+
+  // setFullData((prevData) =>
+  //   prevData.map((item) =>
+  //     item.id === 'employment'
+  //       ? { ...item, [name]: value }
+  //       : item
+  //   )
+  // );
   const handleInputChange = (index, field, value) => {
     const newLanguages = [...languages.language];
     newLanguages[index] = { ...newLanguages[index], [field]: value };
-    setLanguages({ ...languages, language: newLanguages });
+    setFullData(prev=>prev.map((item) =>
+          item.id === 'languages'
+            ? { ...item, language : newLanguages }
+            : item
+        ))
+    // ({...fullData,language: newLanguages})
+    // setLanguages({ ...languages, language: newLanguages });
   };
   const addLanguage = () => {
-    setLanguages((prevState) => ({
-      ...prevState,
-      language: [...prevState.language, { titleLanguage: "", rangeLanguage: 0 }],
-    }));
+    setFullData((prev) =>
+      prev.map((item) =>
+        item.id === 'languages'
+          ? { ...item, language: [...item.language, { titleSkill: '', rangeSkill: 0 }] }
+          : item
+      )
+    );
+    // setLanguages((prevState) => ({
+    //   ...prevState,
+    //   language: [...prevState.language, { titleLanguage: "", rangeLanguage: 0 }],
+    // }));
   };
   const deleteLanguage = (index) => {
     const newLanguages = languages.language.filter((_, i) => i !== index);
-    setLanguages({ ...languages, language: newLanguages });
+    setFullData((prev) =>
+      prev.map((item) =>
+        item.id === 'languages'
+          ? { ...item, language:newLanguages }
+          : item
+      )
+    );
+    // setLanguages({ ...languages, language: newLanguages });
   };
 
   return (
@@ -127,7 +156,7 @@ const Languages = () => {
                   className="input-form-choose w-95"
                   type="text"
                   id="Languages"
-                  value={language.titleLanguage}
+                  value={languages.titleLanguage}
                   onChange={(e)=>{
                     handleInputChange(index,'titleLanguage',e.target.value)
                   }}
@@ -142,7 +171,7 @@ const Languages = () => {
                     min="0"
                     max="5"
                     step="1"
-                    value={language.rangeLanguage}
+                    value={languages.rangeLanguage}
                     onChange={(e)=>{
                       handleInputChange(index,'rangeLanguage',e.target.value)
                     }}

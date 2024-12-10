@@ -5,21 +5,41 @@ import { t } from "i18next";
 import Form from "react-bootstrap/Form";
 import { Context } from "../../context/Context";
 const Skills = () => {
-  const {skills,setskills} = useContext(Context);
+  const {setSkills,fullData , setFullData} = useContext(Context);
+  const skills = fullData.find((item) => item.id === 'skills');
+
   const handleInputChange = (index, field, value) => {
     const newSkills = [...skills.skills];
     newSkills[index] = { ...newSkills[index], [field]: value };
-    setskills({ ...skills, skills: newSkills });
+    setFullData((prev)=>prev.map((item) =>
+          item.id === 'skills'
+            ? { ...item, skills: newSkills }
+            : item
+        ))
   };
+
   const addSkill = () => {
-    setskills((prevState) => ({
-      ...prevState,
-      skills: [...prevState.skills, { titleSkill: '', rangeSkill: 0 }],
-    }));
+    setFullData((prev) =>
+      prev.map((item) =>
+        item.id === 'skills'
+          ? { ...item, skills: [...item.skills, { titleSkill: '', rangeSkill: 0 }] }
+          : item
+      )
+    );
   };
+   // setSkills((prevState) => ({
+    //   ...prevState,
+    //   skills: [...prevState.skills, { titleSkill: '', rangeSkill: 0 }],
+    // }));
   const deleteSkill = (index) => {
     const newSkills = skills.skills.filter((_, i) => i !== index);
-    setskills({ ...skills, skills: newSkills });
+    setFullData((prev) =>
+      prev.map((item) =>
+        item.id === 'skills'
+          ? { ...item, skills:newSkills }
+          : item
+      )
+    );
   };
 
   return (
@@ -32,7 +52,17 @@ const Skills = () => {
           className="w-100 d-flex justify-content-between align-items-center"
           type="button"
         >
-          <span>{t("skills")}</span>
+          <input className="border-0 " type="text" 
+          onChange={(e) => 
+            setFullData(prev => 
+              prev.map(item => 
+                item.id === 'skills' 
+                  ? { ...item, title: e.target.value } 
+                  : item
+              )
+            )
+          }
+          value={skills.title}/>
           <div className="d-flex align-items-center">
             <Dropdown onClick={(e) => e.stopPropagation()}>
               <Dropdown.Toggle

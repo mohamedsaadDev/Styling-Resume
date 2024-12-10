@@ -3,12 +3,26 @@ import Accordion from "react-bootstrap/Accordion";
 import Dropdown from "react-bootstrap/Dropdown";
 import { t } from "i18next";
 import { Context } from "../../context/Context";
+import Form from 'react-bootstrap/Form';
+
 const Education = ({dataCV,setdataCV}) => {
-  const {education, setEducation} = useContext(Context);
+  const { setEducation,fullData , setFullData} = useContext(Context);
     const years = [];
     for (let year = 1960; year <= 2020; year++) {
       years.push(year);
     }
+    const education = fullData.find((item) => item.id === 'education');
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setFullData((prevData) =>
+        prevData.map((item) =>
+          item.id === 'education'
+            ? { ...item, [name]: value }
+            : item
+        )
+      );
+    };
+    console.log('data ed',education);
   return (
     <Accordion.Item eventKey="1">
       <Accordion.Header className="btn-choose constainer-header-accordion">
@@ -20,12 +34,12 @@ const Education = ({dataCV,setdataCV}) => {
           type="button"
         >
           <input 
-          onChange={(e)=>{
-            setEducation({...education, title: e.target.value })
-          }}
+          name="title"
+          value={education.title}
+          onChange={handleInputChange}
           type="text" 
           className="border-0" 
-          value={education.title}/>
+          />
           {/* <span>{t("education")}</span> */}
           <div className="d-flex align-items-center">
             <Dropdown onClick={(e) => e.stopPropagation()}>
@@ -108,11 +122,8 @@ const Education = ({dataCV,setdataCV}) => {
             <input
               className="input-form-choose w-100"
               value={education.education}
-              onChange={(e)=>{
-                setEducation(
-                  {...education, education: e.target.value }
-                );
-              }}
+              name="education"
+              onChange={handleInputChange}
               type="text"
               id="Education"
             />
@@ -124,12 +135,9 @@ const Education = ({dataCV,setdataCV}) => {
               </label>
               <input
                 className="input-form-choose w-95"
+                name="school"
                 value={education.school}
-                onChange={(e)=>{
-                  setEducation(
-                    {...education, school: e.target.value }
-                  );
-                }}
+                onChange={handleInputChange}
                 type="text"
                 id="school"
               />
@@ -140,11 +148,13 @@ const Education = ({dataCV,setdataCV}) => {
               </label>
               <input className="input-form-choose w-95"
                 value={education.city}
-                onChange={(e)=>{
-                  setEducation(
-                    {...education, city: e.target.value }
-                  );
-                }}
+                name="city"
+                onChange={handleInputChange}
+                // onChange={(e)=>{
+                //   setEducation(
+                //     {...education, city: e.target.value }
+                //   );
+                // }}
               type="text" id="city" />
             </div>
           </div>
@@ -152,13 +162,16 @@ const Education = ({dataCV,setdataCV}) => {
             <div className="my-2 w-50">
               <p>{t("startdate")}</p>
               {/* {education.startDateMonth} */}
-              <select onChange={(e)=>{
-                setEducation(
-                  {...education, startDateMonth: e.target.value }
-                );
-              }} 
+              <select
+              name="startDateMonth"
+              onChange={handleInputChange}
+              // onChange={(e)=>{
+              //   setEducation(
+              //     {...education, startDateMonth: e.target.value }
+              //   );
+              // }} 
               className="select-form-choose mr-2" 
-              name="" id="">
+              >
                 <option selected>{t("Month")}</option>
                 <option value={t("January")}>{t("January")}</option>
                 <option value={t("February")}>{t("February")}</option>
@@ -173,7 +186,7 @@ const Education = ({dataCV,setdataCV}) => {
                 <option value={t("November")}>{t("November")}</option>
                 <option value={t("December")}>{t("December")}</option>
               </select>
-              <select onChange={(e)=>{
+              {/* <select onChange={(e)=>{
                 setEducation(
                   {...education, startDateYear: e.target.value }
                 );
@@ -184,15 +197,36 @@ const Education = ({dataCV,setdataCV}) => {
                     {year}
                   </option>
                 ))}
+              </select> */}
+              <select
+                // onChange={(e) => {
+                //   setEducation({
+                //     ...education,
+                //     startDateYear: e.target.value,
+                //   });
+                // }}
+                onChange={handleInputChange}
+                className="select-form-choose selectYear"
+                name="startDateYear"
+              >
+                <option value="year">{t("year")}</option>
+                {years.map((year) => (
+                  <option key={year} value={year}>
+                    {year}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="my-2">
               <p>{t("enddate")}</p>
-              <select onChange={(e)=>{
-                setEducation(
-                  {...education, endDateMonth: e.target.value }
-                );
-              }}  className="select-form-choose mr-2" name="" id="">
+              <select 
+              // onChange={(e)=>{
+              //   setEducation(
+              //     {...education, endDateMonth: e.target.value }
+              //   );
+              // }}  
+              onChange={handleInputChange}
+              className="select-form-choose mr-2" name="endDateMonth" id="">
                 <option selected>{t("Month")}</option>
                 <option value={t("January")}>{t("January")}</option>
                 <option value={t("February")}>{t("February")}</option>
@@ -207,14 +241,18 @@ const Education = ({dataCV,setdataCV}) => {
                 <option value={t("November")}>{t("November")}</option>
                 <option value={t("December")}>{t("December")}</option>
               </select>
-              <select className="select-form-choose selectYear" name="">
-                <option onChange={(e)=>{
-                setEducation(
-                  {...education, endDateYear: e.target.value }
-                );
-              }} value="year">{t("year")}</option>
+              <select 
+              // onChange={(e) => {
+              //   setEducation({
+              //     ...education,
+              //     endDateYear: e.target.value
+              //   });
+              // }} 
+              onChange={handleInputChange}
+              className="select-form-choose selectYear" name="endDateYear">
+                <option value="">{t("year")}</option>
                 {years.map((year) => (
-                  <option key={year} value="year">
+                  <option key={year} value={year}>
                     {year}
                   </option>
                 ))}
@@ -223,6 +261,12 @@ const Education = ({dataCV,setdataCV}) => {
           </div>
           <div>
             <p className="my-2 ">{t("description")}</p>
+            <Form>
+              <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Label>{t("description")}</Form.Label>
+                <Form.Control as="textarea" rows={3} />
+              </Form.Group>
+            </Form>
             <div className="summernote-Description">
               <div className="summernote"></div>
             </div>

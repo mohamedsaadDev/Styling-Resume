@@ -4,19 +4,73 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { t } from "i18next";
 import { Context } from "../../context/Context";
 const CustomSection1 = ({removeCustomSectionByIndex,index}) => {
-  const {section1,setSection1} = useContext(Context);
+  const {fullData,setFullData} = useContext(Context);
+  const section1 = fullData.find((item) => item.id === 'section1');
+
   const updateSection = (key,e) => {
-    setSection1((prevSection) => ({
-      ...prevSection,
-      [key]: e.target.value,
-    }));
+    setFullData(prev=>
+      prev.map((item) =>
+        item.id === 'section1'
+          ? {
+              ...item,
+                [key]: e.target.value,
+              }
+            : item
+      )
+    )
+    // setSection1((prevSection) => ({
+    //   ...prevSection,
+    //   [key]: e.target.value,
+    // }));
   }
   const AddElement = (newElement) => {
-    setSection1((prevSection) => ({
-      ...prevSection,
-      elements: [...prevSection.elements, newElement],
-    }));
+    setFullData((prev)=>
+      prev.map((item) =>
+        item.id === 'section1'
+        ? {
+            ...item,
+              elements: [...item.elements, newElement],
+            }
+          : item
+      )
+      )
+      // prev.map((item) =>
+      //   item.id === 'section1'
+      //    ? 
+    // setSection1((prevSection) => ({
+    //   ...prevSection,
+    //   elements: [...prevSection.elements, newElement],
+    // }));
+    // onChange={(e)=>{
+        //   const newValue = e.target.value
+        //   setSection1((prevSection) => ({
+        //     ...prevSection,
+        //     valueElements: [
+        //       ...prevSection.valueElements.slice(0,index),
+        //       newValue,
+        //       ...prevSection.valueElements.slice(index + 1),
+        //     ],
+        //   }));
+        // }}  
   };
+  const handleOnChange = (e)=>{
+    const newValue = e.target.value
+    setFullData(prev=>
+      prev.map((item) =>
+        item.id === 'section1'
+          ? {
+            ...item,
+
+            valueElements: [
+                    ...item.valueElements.slice(0,index),
+                    newValue,
+                    ...item.valueElements.slice(index + 1),
+                  ],
+          }
+        : item
+      )
+    )
+  }
   return (
     <Accordion.Item eventKey="5">
       <Accordion.Header className="btn-choose constainer-header-accordion">
@@ -114,32 +168,34 @@ const CustomSection1 = ({removeCustomSectionByIndex,index}) => {
         {filed === 'input'? 
         <> <input 
         value={section1.valueElements[index]}
-        onChange={(e)=>{
-          const newValue = e.target.value
-          setSection1((prevSection) => ({
-            ...prevSection,
-            valueElements: [
-              ...prevSection.valueElements.slice(0,index),
-              newValue,
-              ...prevSection.valueElements.slice(index + 1),
-            ],
-          }));
-        }}  
+        onChange={handleOnChange}
+        // onChange={(e)=>{
+        //   const newValue = e.target.value
+        //   setSection1((prevSection) => ({
+        //     ...prevSection,
+        //     valueElements: [
+        //       ...prevSection.valueElements.slice(0,index),
+        //       newValue,
+        //       ...prevSection.valueElements.slice(index + 1),
+        //     ],
+        //   }));
+        // }}  
         className="my-2 " type="text"/> </> 
         : 
         <textarea
         value={section1.valueElements[index]}
-        onChange={(e)=>{
-          const newValue = e.target.value
-          setSection1((prevSection) => ({
-            ...prevSection,
-            valueElements: [
-              ...prevSection.valueElements.slice(0,index),
-              newValue,
-              ...prevSection.valueElements.slice(index + 1),
-            ],
-          }));
-        }}    rows="7" cols="55"/>
+        // onChange={(e)=>{
+        //   const newValue = e.target.value
+        //   setSection1((prevSection) => ({
+        //     ...prevSection,
+        //     valueElements: [
+        //       ...prevSection.valueElements.slice(0,index),
+        //       newValue,
+        //       ...prevSection.valueElements.slice(index + 1),
+        //     ],
+        //   }));
+        // }}    
+        rows="7" cols="55"/>
         
         }
         </div>

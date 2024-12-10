@@ -5,7 +5,26 @@ import { t } from "i18next";
 import { Context } from "../../context/Context";
 
 const PersonalDetails = ({dataCV,setdataCV}) => {
-  const {personalData, setPersonalData} = useContext(Context);
+
+  const {personalData,setPersonalData} = useContext(Context);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setPersonalData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFullData((prevData) =>
+  //     prevData.map((item) =>
+  //       item.id === 'personal Data'
+  //         ? { ...item, [name]: value }
+  //         : item
+  //     )
+  //   );
+  // };
+  // const personalData = fullData.find((item) => item.id === 'personal Data');
   return (
     <Accordion.Item eventKey="0">
       <Accordion.Header className="btn-choose constainer-header-accordion">
@@ -112,13 +131,19 @@ const PersonalDetails = ({dataCV,setdataCV}) => {
                     {t("givenname")}
                   </label>
                   <input
+                    // value={fullData.personalData.name}
                     value={personalData.name}
-                    onChange={(e) =>
-                      setPersonalData({
-                        ...setPersonalData,
-                        name: e.target.value,
-                      })
-                    }
+                    name="name"
+                    onChange={handleInputChange}
+                    // onChange={(e) =>
+                    //   setFullData(prevState => ({
+                    //     ...prevState,
+                    //     personalData: {
+                    //       ...prevState.personalData,
+                    //       name: e.target.value,
+                    //     }
+                    //   }))
+                    // }
                     className="input-form-choose w-100 "
                     id="Givenname"
                     type="text"
@@ -129,13 +154,18 @@ const PersonalDetails = ({dataCV,setdataCV}) => {
                     {t("familyname")}
                   </label>
                   <input
-                  value={personalData.Familyname}
-                    onChange={(e) =>
-                      setPersonalData({
-                        ...setPersonalData,
-                        Familyname: e.target.value,
-                      })
-                    }
+                  name="familyName"
+                  value={personalData.familyName}
+                  onChange={handleInputChange}
+                    // onChange={(e) =>
+                    //   setFullData(prevState => ({
+                    //     ...prevState,
+                    //     personalData: {
+                    //       ...prevState.personalData,
+                    //       familyName: e.target.value,
+                    //     }
+                    //   }))
+                    // }
                     className="input-form-choose w-100"
                     id="Familyname"
                     type="text"
@@ -150,14 +180,18 @@ const PersonalDetails = ({dataCV,setdataCV}) => {
                   className="input-form-choose w-100"
                   id="Emailaddress"
                   type="text"
+                  name="email"
                   value={personalData.email}
-                  onChange={(e)=>{
-                    setPersonalData({
-                      ...personalData,
-                      email: e.target.value
-                    })
-                  }}
-
+                  onChange={handleInputChange}
+                  // onChange={(e) =>
+                  //     setFullData(prevState => ({
+                  //       ...prevState,
+                  //       personalData: {
+                  //         ...prevState.personalData,
+                  //         email: e.target.value,
+                  //       }
+                  //     }))
+                  //   }
                 />
               </div>
             </div>
@@ -178,12 +212,17 @@ const PersonalDetails = ({dataCV,setdataCV}) => {
             </label>
             <input
               value={personalData.phone}
-              onChange={(e) => 
-                setPersonalData({
-                  ...personalData,
-                  phone: e.target.value,
-                })
-              }
+              name="phone"
+              onChange={handleInputChange}
+              // onChange={(e) => 
+              //   setFullData(prevState => ({
+              //     ...prevState,
+              //     personalData: {
+              //       ...prevState.personalData,
+              //       phone: e.target.value,
+              //     }
+              //   }))
+              // }
               className="input-form-choose w-100"
               id="phonenumber"
               type="namber"
@@ -195,12 +234,17 @@ const PersonalDetails = ({dataCV,setdataCV}) => {
             </label>
             <input
             value={personalData.state}
-              onChange={(e) => 
-                setPersonalData({
-                  ...personalData,
-                  state: e.target.value,
-                })
-              }
+            name="state"
+            onChange={handleInputChange}
+            // onChange={(e) => 
+            //   setFullData(prevState => ({
+            //     ...prevState,
+            //     personalData: {
+            //       ...prevState.personalData,
+            //       state: e.target.value,
+            //     }
+            //   }))
+            // }
               className="input-form-choose w-100"
               id="address"
               type="text"
@@ -212,6 +256,18 @@ const PersonalDetails = ({dataCV,setdataCV}) => {
                 {t("postcode")}
               </label>
               <input
+                value={personalData.postcode}
+                name="postcode"
+                onChange={handleInputChange}
+                // onChange={(e) => 
+                //   setFullData(prevState => ({
+                //     ...prevState,
+                //     personalData: {
+                //       ...prevState.personalData,
+                //       postcode: e.target.value,
+                //     }
+                //   }))
+                // }
                 className="input-form-choose w-95"
                 id="postcode"
                 type="text"
@@ -223,12 +279,16 @@ const PersonalDetails = ({dataCV,setdataCV}) => {
               </label>
               <input
               value={personalData.city}
-                onChange={(e) => 
-                  setPersonalData({
-                    ...personalData,
-                    city: e.target.value,
-                  })
-                }
+              onChange={handleInputChange}
+                // onChange={(e) => 
+                //   setFullData(prevState => ({
+                //     ...prevState,
+                //     personalData: {
+                //       ...prevState.personalData,
+                //       city: e.target.value,
+                //     }
+                //   }))
+                // }
                 className="input-form-choose w-95"
                 id="City"
                 type="text"

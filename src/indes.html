@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  background-color: rgb(250, 248, 235);
+}
+
+.container-proudcts {
+  background-color: rgb(250, 248, 235);
+  margin-bottom: 0;
+}
+
+.m-top {
+  margin-top: 0 !important;
+}
+
+.p-sides {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+header {
+  background-color: rgb(56, 45, 110);
+}
+
+.icon-cart-header {
+  color: #ffffff !important;
+}
+
+.product-384733871 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+salla-product-options[product-id="384733871"] {
+  position: absolute;
+  opacity: 0.2;
+  left: 7000px;
+}
+
+.wrapper-subscription {
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.title-box {
+  width: 30%;
+  text-align: center;
+}
+
+.title-box h1 {
+  margin-top: 25%;
+  color: rgb(56, 45, 110);
+  line-height: 53px;
+  font-size: 40px;
+  font-weight: revert-layer;
+}
+
+.container-box {
+  margin: 0 auto;
+}
+
+.container-subscription > p,
+.container-numberofmeals > p {
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(56, 45, 110);
+}
+
+.container-subscription > div,
+.container-numberofmeals > div {
+  height: auto;
+  display: flex;
+}
+
+.container-subscription div > p,
+.container-numberofmeals div > p {
+  font-size: 22px;
+  font-weight: 500;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  background-color: rgb(56, 45, 110);
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+}
+
+.container-numberofmeals div > p {
+  padding: 22px 66.6px;
+}
+
+.container-subscription div > .active,
+.container-numberofmeals div > .active {
+  background-color: rgb(234, 88, 12);
+}
+
+button[product-id="384733871"] {
+  height: 66px !important;
+  width: 100%;
+}
+
+button[product-id="384733871"] span {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  margin-top: 28px;
+}
+
+.container-btnMakfi {
+  position: absolute;
+  top: 22%;
+  right: 23%;
+  color: #000;
+  z-index: 9999;
+}
+
+.container-btnMakfi a button {
+  background-color: rgb(234, 88, 12);
+  width: 125px;
+  height: 43px;
+  border-radius: 18px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-makfi {
+  height: 350px;
+  width: 100%;
+  padding: 100px;
+  background-image: url('./images/footer.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer-makfi div p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container-info-footer div {
+  padding: 70px 120px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.container-info-footer div ul li {
+  padding: 5px;
+  font-weight: 600;
+}
+
+.container-info-footer div ul li a {
+  width: 1000px;
+}
+
+.container-info-footer div h4 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 3px;
+  line-height: 40px;
+}
+
+.banner--fixed img {
+  border-radius: 0 !important;
+}
+
+.btn-ordernow-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-ordernow-header button {
+  background-color: rgb(234, 88, 12);
+  width: 125px;
+  height: 35px;
+  border-radius: 18px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+.s-cart-summary-content,
+.price-0-hide,
+.s-product-options-option,
+.s-theme_edit_bar,
+.hide,
+.s-cart-summary-count,
+.swalSubscribe,
+.swal2-container.swal2-rtl.swal2-top-start.swal2-backdrop-show,
+.Thebasketisempty {
+  display: none !important;
+}
+
+.s-user-menu-trigger {
+  background-color: rgb(56, 45, 110);
+}
+
+.bg-app,
+.s-quantity-input-input {
+  background-color: rgb(250, 248, 235);
+}
+
+@media (max-width: 1442px) {
+  .container-btnMakfi {
+    top: 21%;
+    right: 20%;
+  }
+}
+
+@media (max-width: 992px) {
+  .container-btnMakfi {
+    top: 20%;
+    right: 19%;
+  }
+
+  .container-btnMakfi a button {
+    width: 115px;
+    height: 38px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper-subscription {
+    width: 100%;
+  }
+
+  .container-btnMakfi {
+    top: 19%;
+    right: 18%;
+  }
+
+  .container-btnMakfi a button {
+    width: 90px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .container-info-footer {
+    flex-direction: column;
+  }
+
+  .container-info-footer div {
+    padding: 0 100px !important;
+  }
+
+  .footer-makfi {
+    padding: 50px;
+  }
+
+  .is-sticky-product-bar.product-single {
+    padding-bottom: 0rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper-subscription {
+    flex-direction: column;
+  }
+
+  .title-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-makfi {
+    padding: 20px;
+  }
+
+  .is-sticky-product-bar.product-single {
+    padding-bottom: 0rem !important;
+  }
+}
+
+@media (max-width: 598px) {
+  .container-info-footer div ul li a {
+    width: 1000px;
+  }
+
+  .container-info-footer div {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-numberofmeals div > p {
+    padding: 22px 45.6px;
+  }
+
+  button[product-id="384733871"] {
+    width: 80%;
+  }
+
+  .container-info-footer div {
+    padding: 0px 60px !important;
+  }
+
+  .container-btnMakfi a button {
+    width: 71px;
+    height: 25px;
+    font-size: 11px;
+    /* font-weight: 500; */
+    /* position: absolute; */
+    /* right: 20%; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: center;
+    margin-left: 20px;
+    width: auto; */
+    /* margin-right: ; */
+    /* margin-bottom: ; */
+  }
+}
+
+        /* padding: 40px; */
+        /* bottom: ; */
+        /* #product-726753193 salla-product-options */
+        /* font-size: 20px; */
+    </style>
+</head>
+<body>
+  <div>
+    <div>facke</div>
+    <div></div>
+    <div>
+      <section></section>
+    </div>
+  </div>
+    <div class="bg-app w-full flex justify-center">
+      <h2>تابعنا</h2>
+      <ul>
+        <li><a href=""></a></li>
+        <li><img src="" alt=""></li>
+        <li><img src="" alt=""></li>
+        <li><img src="" alt=""></li>
+      </ul>
+        <div class="wrapper-subscription p-4 flex ">
+            <div class=" title-box" >
+                <h1>قم بإنشاء البوكس الخاص بك</h1>
+            </div>
+            <div class="container-box">
+                <div>
+                    <div class="container-subscription">
+                        <p>مدة الاشتراك</p>
+                        <div >
+                            <p class="w-full" subscription='يومي' >يوم واحد</p>
+                            <p class="w-full active" subscription='اسبوعي' >اسبوعي</p>
+                            <p class="w-full hidden" subscription='شهري' >شهري</p>
+                        </div>
+                    </div>
+                    <div class="container-numberofmeals">
+                        <p>عدد الوجبات</p>
+                        <div class="meal-day hidden">
+                            <p number-meal="1">1</p>
+                            <p number-meal="2">2</p>
+                            <p class="active" number-meal="3">3</p>
+                        </div>
+                        <div class="meal-week">
+                            <p number-meal="3">3</p>
+                            <p number-meal="4">4</p>
+                            <p class="active" number-meal="5">5</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="product-996404785"  id="product-996404785">
+                    <div class="mr-10 main-content md:sticky md:overflow-hidden top-24 w-full md:w-2/4 md:pb-16-s">
+                        {% hook 'product:single.description.start' %}
+                        {% if product.subtitle %}
+                            <h2 class="product-entry__sub-title text-sm text-gray-500 leading-6 mb-2.5">
+                                {{ product.subtitle }}
+                            </h2>
+                        {% endif %}
+                        {% hook 'product:single.description' %}
+                        <form class="form product-form" enctype="multipart/form-data" method="post"
+                            onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
+                            <input type="hidden" name="id" value="{{ product.id }}">
+                            {% hook 'product:single.form.start' %}
+                            {% include 'pages.partials.product.options' %}
+                            {% hook 'product:single.form.end' %}
+                            <section class="p-5 rounded-md rounded-b-none">
+                                {# Quantity #}
+                                {% if product.is_hidden_quantity or product.type == 'booking' %}
+                                    <input type="hidden" value="1" name="quantity" aria-label="Quantity"/>
+                                {% else %}
+                                    <div class="hidden sticky-product-bar__quantity  mb-5">
+                                        <label class="form-label font-bold">
+                                            {{ trans('pages.products.quantity') }}
+                                        </label>
+                                        <salla-quantity-input max="{{ product.max_quantity }}" value="1" name="quantity" aria-label="Quantity"
+                                        class="border-gray-200 flex justify-end"></salla-quantity-input>
+                                    </div>
+                                {% endif %}
+                                {# Add to cart #}
+                                <div class="container-btn-Chooserecipes">
+                                    <salla-add-product-button
+                                        
+                                        {# quick-buy #}
+                                        {{theme.settings.get('sticky_add_to_cart') ? ' support-sticky-bar' : ''}}
+                                        {{product.is_require_shipping ? 'required-shipping' : ''}}
+                                        amount="{{ product.base_currency_price }}"
+                                        class="btn-Chooserecipes mt-5 w-full sticky-product-bar__btn"
+                                        product-status="{{ product.status }}"
+                                        product-type="{{ product.type }}"
+                                        product-id="{{ product.id }}"
+                                        loader-position="end"
+                                        type="submit"
+                                        width="wide"
+                                        {# Notify availability props#}
+                                        {% if product.notify_availability %}
+                                            {{ product.notify_availability.subscribed ? 'is-subscribed' : '' }}
+                                            channels="{{ product.notify_availability.channels|join(',') }}"
+                                            subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
+                                            {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
+                                        {% endif %}>
+                                    {{ trans('blocks.appBanner.chooserecipes') }}
+                                </salla-add-product-button>
+                                </div>
+                            </section>
+                            {% if product.is_giftable %}
+                                <salla-gifting class="mt-5" widget-subtitle="{{ gifting_intro }}" product-id="{{ product.id }}"></salla-gifting>
+                            {% endif %}
+                        </form>
+    
+                        {% hook 'product:single.description.end' %}
+                        <salla-quick-order class="mt-5 md:-mb-2 block"></salla-quick-order>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <form id="product-726753193" bindsubmit="">
+        <section></section>
+        <section></section>
+    </form>
+    <a href=""></a>
+    <section></section>
+    <textarea rows="4" class="s-form-control" required="" id="options[185250491]" name="options[185250491]" placeholder=""></textarea>
+    <script>
+      
+        //javaScript subscription document.addEventListener('DOMContentLoaded', function(){
+//   let subscriptionperiod = 'اسبوعي';
+//   let numberofmeals = '5';
+  // let btn = document.querySelector('salla-add-product-button[product-id="726753193"] div salla-button button span ');
+//    btn.innerHTML = 'اختار الوصفات';
+  
+  
+// console.log('sucssfull lode page',btn)
+// })
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    let subscriptionperiod = 'اسبوعي';
+    let numberofmeals = '5';
+    let btn = document.querySelector('[product-id="726753193] span');
+    btn.innerHTML = 'اختار الوصفات';
+
+    const mealDay = document.querySelector('.meal-day');
+    const mealWeek = document.querySelector('.meal-week');
+    mealDay.classList.add('hide');
+    mealWeek.classList.remove('hide');
+
+    let textarea = document.getElementById("options[185250491]");
+    updateTextarea();
+
+    let mealOptions = document.querySelectorAll('.container-numberofmeals p[number-meal]');
+    mealOptions.forEach(function(option) {
+        option.addEventListener('click', function() {
+            mealOptions.forEach(function(opt) {
+                opt.classList.remove('active');
+            });
+            option.classList.add('active');
+            numberofmeals = option.getAttribute('number-meal');
+            updateTextarea();
+        });
+    });
+
+    let subscriptionDuration = document.querySelectorAll('.container-subscription p[subscription]');
+    subscriptionDuration.forEach(function(option) {
+        option.addEventListener('click', function() {
+            subscriptionDuration.forEach(function(opt) {
+                opt.classList.remove('active');
+            });
+            option.classList.add('active');
+            subscriptionperiod = option.getAttribute('subscription');
+
+            if (subscriptionperiod === 'يومي') {
+                mealDay.classList.remove('hide');
+                mealWeek.classList.add('hide');
+            } else if (subscriptionperiod === 'اسبوعي') {
+                mealDay.classList.add('hide');
+                mealWeek.classList.remove('hide');
+            }
+
+            updateTextarea();
+        });
+    });
+    function updateTextarea() {
+        textarea.value = `مدة الاشتراك: ${subscriptionperiod} عدد الوجبات: ${numberofmeals}`;
+    }
+    document.querySelector('salla-add-product-button[product-id="726753193"] div salla-button button span ');
+    // let sallaButton = document.querySelector('salla-button[product-id="384733871"]');
+    // sallaButton.addEventListener("click", function() {
+    //     setTimeout(function() {
+    //         if(subscriptionperiod === 'يومي'){
+    //             window.location.href = "https://salla.design/dev-hesyra7kqowfowva/redirect/categories/1974397456";
+    //         }
+    //         if(subscriptionperiod === 'اسبوعي'){
+    //             window.location.href = "https://salla.design/dev-hesyra7kqowfowva/redirect/categories/1664956179";
+    //         }
+    //         if(subscriptionperiod === 'شهري'){
+    //             window.location.href = "https://salla.design/dev-hesyra7kqowfowva/redirect/categories/1448931609";
+    //         }
+    //     }, 1000);
+    // });
+});
+let sallaButton = document.querySelector('salla-button[product-id="726753193"]');
+    sallaButton.addEventListener("click", function() {
+        setTimeout(function() {
+            if(subscriptionperiod === 'يومي'){
+                window.location.href = "https://salla.design/dev-hesyra7kqowfowva/redirect/categories/1974397456";
+            }
+            if(subscriptionperiod === 'اسبوعي'){
+                window.location.href = "https://salla.design/dev-hesyra7kqowfowva/redirect/categories/1664956179";
+            }
+            if(subscriptionperiod === 'شهري'){
+                window.location.href = "https://salla.design/dev-hesyra7kqowfowva/redirect/categories/1448931609";
+                // class="s-block s-block--fixed-banner wide-placeholder"
+            }
+        }, 1000);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    let subscriptionperiod = 'اسبوعي';
+    let numberofmeals = '5';
+    let btn = document.querySelector('salla-add-product-button[product-id="726753193"] div salla-button button span ');
+
+    btn.innerHTML = 'اختار الوصفات';
+    console.log('text btn',btn)
+
+    const mealDay = document.querySelector('.meal-day');
+    const mealWeek = document.querySelector('.meal-week');
+    mealDay.classList.add('hide');
+    mealWeek.classList.remove('hide');
+
+    let textarea = document.getElementById("options[185250491]");
+    updateTextarea();
+
+    let mealOptions = document.querySelectorAll('.container-numberofmeals p[number-meal]');
+    mealOptions.forEach(function(option) {
+        option.addEventListener('click', function() {
+            mealOptions.forEach(function(opt) {
+                opt.classList.remove('active');
+            });
+            option.classList.add('active');
+            numberofmeals = option.getAttribute('number-meal');
+            updateTextarea();
+        });
+    });
+
+    let subscriptionDuration = document.querySelectorAll('.container-subscription p[subscription]');
+    console.log('subscriptionDuration')
+    subscriptionDuration.forEach(function(option) {
+        option.addEventListener('click', function() {
+            subscriptionDuration.forEach(function(opt) {
+                opt.classList.remove('active');
+            });
+            option.classList.add('active');
+            subscriptionperiod = option.getAttribute('subscription');
+
+            if (subscriptionperiod === 'يومي') {
+                mealDay.classList.remove('hide');
+                mealWeek.classList.add('hide');
+            } else if (subscriptionperiod === 'اسبوعي') {
+                mealDay.classList.add('hide');
+                mealWeek.classList.remove('hide');
+            }
+
+            updateTextarea();
+        });
+    });
+    function updateTextarea() {
+        textarea.value = `مدة الاشتراك: ${subscriptionperiod} عدد الوجبات: ${numberofmeals}`;
+    }
+    let sallaButton = document.querySelector('salla-button[product-id="726753193"]');
+    sallaButton.addEventListener("click", function() {
+        setTimeout(function() {
+            if(subscriptionperiod === 'يومي'){
+                window.location.href = "https://makfi.co/ar/%D8%A7%D9%84%D9%8A%D9%88%D9%85/c1411561416?filters[category_id]=1411561416";
+            }
+            if(subscriptionperiod === 'اسبوعي'){
+                window.location.href = "https://makfi.co/ar/%D8%A7%D9%84%D8%A7%D8%B3%D8%A8%D9%88%D8%B9/c213208012?filters[category_id]=213208012";
+            }
+            if(subscriptionperiod === 'شهري'){
+                window.location.href = "https://salla.design/dev-hesyra7kqowfowva/redirect/categories/1448931609";
+            }
+        }, 1000);
+    });
+});
+const templetSubscription = `<div class="bg-app w-full flex justify-center">
+        <div class="wrapper-subscription p-4 flex ">
+            <div class=" title-box" >
+                <h1>قم بإنشاء البوكس الخاص بك</h1>
+            </div>
+            <div class="container-box">
+                <div>
+                    <div class="container-subscription">
+                        <p>مدة الاشتراك</p>
+                        <div >
+                           <p class="w-full" subscription='يومي' >يوم واحد</p>
+                            <p class="w-full active" subscription='اسبوعي' >اسبوعي</p>
+                            <p class="w-full hidden" subscription='شهري' >شهري</p>
+                        </div>
+                    </div>
+                    <div class="container-numberofmeals">
+                        <p>عدد الوجبات</p>
+                        <div class="meal-day hidden">
+                            <p number-meal="1">1</p>
+                            <p number-meal="2">2</p>
+                            <p class="active" number-meal="3">3</p>
+                        </div>
+                        <div class="meal-week">
+                            <p number-meal="3">3</p>
+                            <p number-meal="4">4</p>
+                            <p class="active" number-meal="5">5</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+ `;
+    newDiv.innerHTML = templetSubscription
+  if(dummyElement){
+  dummyElement.insertAdjacentElement("afterbegin", newDiv);
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    let subscriptionPeriod = 'اسبوعي';
+    let numberOfMeals = '5';
+
+    // اختيار عناصر DOM المستخدمة
+    const btn = document.querySelector('salla-add-product-button[product-id="726753193"] div salla-button button span');
+    const mealDay = document.querySelector('.meal-day');
+    const mealWeek = document.querySelector('.meal-week');
+    const textarea = document.getElementById("options[185250491]");
+    const mealOptions = document.querySelectorAll('.container-numberofmeals p[number-meal]');
+    const subscriptionDuration = document.querySelectorAll('.container-subscription p[subscription]');
+    const sallaButton = document.querySelector('salla-button[product-id="726753193"]');
+
+    // تحديث النص الداخلي للزر
+    if (btn) {
+        btn.innerHTML = 'اختار الوصفات';
+        console.log('تم تحديث نص الزر:', btn.innerHTML);
+    } else {
+        console.warn('لم يتم العثور على عنصر الزر المحدد.');
+    }
+
+    // تحديث textarea بالقيم الحالية
+    function updateTextarea() {
+        if (textarea) {
+            textarea.value = `مدة الاشتراك: ${subscriptionPeriod} عدد الوجبات: ${numberOfMeals}`;
+        } else {
+            console.warn('لم يتم العثور على عنصر textarea.');
+        }
+    }
+    updateTextarea();
+
+    // إضافة أحداث للنقر على خيارات الوجبات
+    mealOptions.forEach(option => {
+        option.addEventListener('click', function () {
+            mealOptions.forEach(opt => opt.classList.remove('active'));
+            option.classList.add('active');
+            numberOfMeals = option.getAttribute('number-meal');
+            updateTextarea();
+        });
+    });
+
+    // إضافة أحداث للنقر على خيارات مدة الاشتراك
+    subscriptionDuration.forEach(option => {
+        option.addEventListener('click', function () {
+            subscriptionDuration.forEach(opt => opt.classList.remove('active'));
+            option.classList.add('active');
+            subscriptionPeriod = option.getAttribute('subscription');
+
+            // إظهار/إخفاء حسب مدة الاشتراك
+            if (subscriptionPeriod === 'يومي') {
+                mealDay.classList.remove('hide');
+                mealWeek.classList.add('hide');
+            } else if (subscriptionPeriod === 'اسبوعي') {
+                mealDay.classList.add('hide');
+                mealWeek.classList.remove('hide');
+            } else if (subscriptionPeriod === 'شهري') {
+                mealDay.classList.add('hide');
+                mealWeek.classList.add('hide');
+            }
+
+            updateTextarea();
+        });
+    });
+
+    // حدث النقر على زر "salla-button" وتوجيه المستخدم
+    sallaButton.addEventListener("click", function () {
+        setTimeout(function () {
+            if (subscriptionPeriod === 'يومي') {
+                window.location.href = "https://makfi.co/ar/%D8%A7%D9%84%D9%8A%D9%88%D9%85/c1411561416?filters[category_id]=1411561416";
+            } else if (subscriptionPeriod === 'اسبوعي') {
+                window.location.href = "https://makfi.co/ar/%D8%A7%D9%84%D8%A7%D8%B3%D8%A8%D9%88%D8%B9/c213208012?filters[category_id]=213208012";
+            } else if (subscriptionPeriod === 'شهري') {
+                window.location.href = "https://salla.design/dev-hesyra7kqowfowva/redirect/categories/1448931609";
+            }
+        }, 1000);
+    });
+});
+    </script>
+</body>
+</html>
